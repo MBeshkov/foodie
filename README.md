@@ -1,4 +1,4 @@
-# foodie
+# django api
 
 1) created a new django project
 2) created a new django app '**listings**' inside the project
