@@ -9,4 +9,12 @@
 7) now we need to map the view we just created to a specific url. (basically specify a way for us to call the view we just created). we first go to django_app and add a line to include the file 'listings/urls.py'. in this **'listings/urls.py'** file we map our view to a specific url (*api/listings*)
 9) now when we go to http://127.0.0.1:8000/api/listings/ we can create/view all the elements in our model through this page:
 
+(NOTE: by simply calling GET requests from javascript you can get the data you need)
+
 <img src="https://i.imgur.com/dipmV2p.png" width="70%"/>
+
+useful links:<br>
+- tutorial I followed: https://www.valentinog.com/blog/drf/#Django_REST_with_React_Django_and_React_together
+- understand models: https://docs.djangoproject.com/en/3.2/topics/db/models/
+- understand views: https://docs.djangoproject.com/en/3.2/topics/class-based-views/
+- understand serialisers: https://docs.djangoproject.com/en/3.2/topics/serialization/
