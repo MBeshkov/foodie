@@ -2,7 +2,7 @@
 
 ### to install:
 - clone the repo in one of your folders using `git clone https://github.com/elia-orsini/foodie.git` (it's like 200MB)
-- install **npm** if you don't have it alreadyhttps://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- install **npm** if you don't have it already (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
 - `npm install --global expo-cli`
 - `npm install @react-navigation/native`
 - `npm install react-native-paper`
