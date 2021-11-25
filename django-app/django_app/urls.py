@@ -15,9 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
+from rest_framework.authtoken import views
+from listings.views import UserCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('listings.urls')),
-    path('', include('events.urls'))
-]
+    path('listings/', include('listings.urls')),
+    path('events/', include('events.urls')),
+    path('api-token-auth/', views.obtain_auth_token),
+    path('register/', UserCreateView.as_view(), name='create_user'),
+]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'events.apps.EventsConfig',
     'rest_framework',
     'django_filters',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [

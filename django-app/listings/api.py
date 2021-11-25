@@ -1,6 +1,6 @@
 from rest_framework.decorators import permission_classes
 from .models import Listing
-from .serializers import ListingSerializer
+from .serializers import ListingListSerializer
 from rest_framework import generics, viewsets, permissions
 
 class ListingViewSet(viewsets.ModelViewSet):
@@ -8,4 +8,4 @@ class ListingViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = ListingSerializer
+    serializer_class = ListingListSerializer
