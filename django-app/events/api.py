@@ -1,6 +1,6 @@
 from rest_framework.decorators import permission_classes
 from .models import Event
-from .serializers import EventSerializer
+from .serializers import EventListSerializer
 from rest_framework import generics, viewsets, permissions
 
 class EventViewSet(viewsets.ModelViewSet):
@@ -8,4 +8,4 @@ class EventViewSet(viewsets.ModelViewSet):
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = EventSerializer
+    serializer_class = EventListSerializer

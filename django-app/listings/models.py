@@ -36,8 +36,21 @@ class Listing(models.Model):
     ]
     product_name = models.CharField(max_length=50, null=True)
     category = models.CharField(max_length=3, choices=tag_choices, default=miscellaneous)
+    logo_image = models.ImageField(upload_to='listingImages', blank=True, default="listingImages/default.jpg")
     details = models.TextField(null=True, verbose_name="Tell us more about the product")
     created_at = models.DateTimeField(auto_now_add=True)
     vegetarian = models.BooleanField(null=True)
     vegan = models.BooleanField()
-    username = models.CharField(max_length=25)
+
+    def __str__(self):
+
+        return "{}. {}".format(self.product_name, self.category)
+
+class Image(models.Model):
+	listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='listing_images',blank=True, null=True)
+	image = models.ImageField(upload_to='listingImages',blank=True)
+	image_title = models.CharField(max_length=120, blank=True)
+	uploded_at = models.DateTimeField(auto_now_add=True)
+
+	class Meta:
+		ordering = ['-uploded_at']
