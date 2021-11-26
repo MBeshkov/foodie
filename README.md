@@ -18,3 +18,10 @@ useful links:<br>
 - understand models: https://docs.djangoproject.com/en/3.2/topics/db/models/
 - understand views: https://docs.djangoproject.com/en/3.2/topics/class-based-views/
 - understand serialisers: https://docs.djangoproject.com/en/3.2/topics/serialization/
+
+# api requests available
+
+the APIs requests available are:
+- http://localhost:8000/listings/
+- http://localhost:8000/events/
+- http://localhost:8000/admin/
