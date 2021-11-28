@@ -7,7 +7,7 @@ function Navigation() {
       <nav className="navbar navbar-expand navbar-dark" style={{ backgroundColor: "#e5761b" }}>
         <div className="container">
           <NavLink className="navbar-brand" to="/">
-            React Multi-Page Website
+            Foodie
           </NavLink>
           <div>
             <ul className="navbar-nav ml-auto">

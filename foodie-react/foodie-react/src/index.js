@@ -9,6 +9,8 @@ import {
   Events,
   Chat,
   Profile,
+  ListingDetails,
+  EventDetails,
 } from "./components";
 
 ReactDOM.render(
@@ -19,6 +21,8 @@ ReactDOM.render(
       <Route path="/events" element={<Events />} />
       <Route path="/chat" element={<Chat />} />
       <Route path="/profile" element={<Profile />} />
+      <Route path="/listingdetails/:id" element={<ListingDetails />} />
+      <Route path="/eventdetails/:id" element={<EventDetails />} />
     </Routes>
     <Footer />
   </Router>,
