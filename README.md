@@ -1,4 +1,4 @@
-# django api
+# react web-app
 
 this is the repo for the web app built in React.
 To run it on your environment please do the following operations:
