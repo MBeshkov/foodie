@@ -1,4 +1,4 @@
-# foodie
+# react native
 
 ### to install:
 - clone the repo in one of your folders using `git clone https://github.com/elia-orsini/foodie.git` (it's like 200MB)
