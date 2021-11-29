@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class Event(models.Model):
@@ -19,10 +20,14 @@ class Event(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     vegetarian = models.BooleanField(null=True)
     vegan = models.BooleanField()
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='events', null=True)
 
     def __str__(self):
 
         return "{}. {}".format(self.event_name, self.category)
+
+    def get_test(self):
+        return self.event_name + ' which is a ' + self.category
 
 class Image(models.Model):
 	listing = models.ForeignKey(Event, on_delete=models.CASCADE, related_name='event_images',blank=True, null=True)
@@ -32,3 +37,4 @@ class Image(models.Model):
 
 	class Meta:
 		ordering = ['-uploded_at']
+

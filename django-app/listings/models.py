@@ -1,4 +1,5 @@
 from django.db import models
+from django.conf import settings
 
 # Create your models here.
 class Listing(models.Model):
@@ -41,10 +42,14 @@ class Listing(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     vegetarian = models.BooleanField(null=True)
     vegan = models.BooleanField()
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='listings', null=True)
 
     def __str__(self):
 
         return "{}. {}".format(self.product_name, self.category)
+
+    def get_test(self):
+        return self.product_name + ' which is a ' + self.category
 
 class Image(models.Model):
 	listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name='listing_images',blank=True, null=True)
