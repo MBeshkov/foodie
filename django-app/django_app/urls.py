@@ -18,12 +18,18 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 from rest_framework.authtoken import views
-from listings.views import UserCreateView
+from allauth.account.views import confirm_email
+from django.conf.urls import url
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('listings/', include('listings.urls')),
     path('events/', include('events.urls')),
     path('api-token-auth/', views.obtain_auth_token),
-    path('register/', UserCreateView.as_view(), name='create_user'),
+    url(r'^rest-auth/', include('rest_auth.urls')),
+    url(r'^rest-auth/registration/', include('rest_auth.registration.urls')),
+    url(r'^account/', include('allauth.urls')),
+    url(r'^accounts-rest/registration/account-confirm-email/(?P<key>.+)/$', confirm_email, name='account_confirm_email'),
 ]#+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

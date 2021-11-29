@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Event
 from .models import Image
 from rest_framework.reverse import reverse
-from django.contrib.auth import get_user_model
+
 
 class EventListSerializer(serializers.ModelSerializer):
     absolute_url = serializers.SerializerMethodField()
@@ -12,7 +12,7 @@ class EventListSerializer(serializers.ModelSerializer):
         fields = ['id', 'event_name', 'category', 'logo_image', 'absolute_url']
 
     def get_absolute_url(self, obj):
-        return reverse('listings_detail', args=(obj.pk,))
+        return reverse('events_detail', args=(obj.pk,))
 
 class ImageSerializer(serializers.HyperlinkedModelSerializer):
 
@@ -27,7 +27,7 @@ class EventDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Event
-        fields = ['id', 'event_name', 'category', 'logo_image', 'location', 'details', 'created_at', 'vegetarian', 'vegan', 'update', 'delete', 'event_images']
+        fields = ['id', 'event_name', 'category', 'logo_image', 'location', 'details', 'created_at', 'vegetarian', 'vegan', 'author', 'update', 'delete', 'event_images']
 
     def get_update(self, obj):
         return reverse('events_update', args=(obj.pk,))
