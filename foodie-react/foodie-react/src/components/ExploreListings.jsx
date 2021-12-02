@@ -2,6 +2,19 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
+const emojiSelection = (category) => {
+  switch (category) {
+    case 'snk':
+      return '🍕 ';
+    case 'vgs':
+      return '🥦 ';
+    case 'frt':
+      return '🍉 ';
+    default:
+      return '🍝 ';
+  }
+}
+
 const Explore = () => {
   const [fetchedData, setFetchedData] = useState(['yo']);
   
@@ -19,7 +32,10 @@ const Explore = () => {
           <Link className="nav-link" to={`/ListingDetails/${listing.id}`}>
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title"> {listing.product_name} </h5>
+                <h5 class="card-title"> 
+                  {emojiSelection(listing.category)}
+                  {listing.product_name} 
+                </h5>
                 <h6 class="card-subtitle mb-2 text-muted">{listing.category} </h6>
                 <div class="card-text">
                   description of listing

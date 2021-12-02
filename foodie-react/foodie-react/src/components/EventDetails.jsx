@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'
 
 function DeleteEvent(id) {
+    
     axios.delete('http://127.0.0.1:8000/events/delete/'+id)
     .then((res) => {
         alert('event deleted');
@@ -37,7 +38,7 @@ function EventDetails() {
                 details of event
                 </div>
                 <br />
-                <button onClick = {() => DeleteEvent(id)}>Delete</button>
+                <button type="button" class="btn btn-danger" onClick = {() => DeleteEvent(id)}>Delete</button>
             </div>
             </div>
             </div>
