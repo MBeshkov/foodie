@@ -3,7 +3,6 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom'
 
 function DeleteListing(id) {
-    
     axios.delete('http://127.0.0.1:8000/listings/delete/'+id)
     .then((res) => {
         alert('listing deleted');
@@ -38,7 +37,7 @@ function ListingDetails() {
                 details of listing
                 </div>
                 <br />
-                <button type="button" class="btn btn-danger" onClick = {() => DeleteListing(id)}>Delete</button>
+                <button type="button" class="btn btn-danger" onClick ={() => DeleteListing(id)}>Delete</button>
             </div>
             </div>
             </div>
